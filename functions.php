@@ -33,30 +33,6 @@ function busybiz_theme_setup() {
 }
 add_action( 'after_setup_theme', 'busybiz_theme_setup' );
 
-/**
- * Caricamento assets frontend + editor
- */
-function busybiz_enqueue_assets() {
-	$theme_version = wp_get_theme()->get( 'Version' );
-
-	// CSS principale
-	wp_enqueue_style(
-		'busybiz-style',
-		get_theme_file_uri( 'assets/css/screen.css' ),
-		array(),
-		$theme_version
-	);
-
-	// JS (se ti serve)
-	wp_enqueue_script(
-		'busybiz-script',
-		get_theme_file_uri( 'assets/js/main.js' ),
-		array(),
-		$theme_version,
-		true
-	);
-}
-add_action( 'wp_enqueue_scripts', 'busybiz_enqueue_assets' );
 
 /**
  * Editor styles (Gutenberg)
@@ -103,3 +79,54 @@ function busybiz_is_site_editor() {
 	return is_admin() && function_exists( 'get_current_screen' ) && get_current_screen()?->is_block_editor();
 }
 
+register_block_style(
+  'core/button',
+  [
+    'name'  => 'secondary',
+    'label' => 'Secondary',
+  ]
+);
+
+register_block_style(
+  'core/button',
+  [
+    'name'  => 'contact',
+    'label' => 'Contact',
+  ]
+);
+
+register_block_style(
+  'core/button',
+  [
+    'name'  => 'contact-outline',
+    'label' => 'Contact Outline',
+  ]
+);
+
+register_block_style(
+  'core/button',
+  [
+    'name'  => 'call',
+    'label' => 'Call',
+  ]
+);
+
+register_block_style(
+  'core/button',
+  [
+    'name'  => 'call-outline',
+    'label' => 'Call Outline',
+  ]
+);
+
+
+ function busybiz_block_assets(){
+    // Enqueue theme stylesheet for the front-end.
+    wp_enqueue_style( 'busybiz-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
+    wp_enqueue_style( 'busybiz-frontend-style', get_template_directory_uri() . '/assets/css/screen.css', array(), wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/font-awesome/css/all.css', array(), '5.15.3' );
+
+	// Enqueue theme stylesheet for the editor.
+	wp_enqueue_style( 'busybiz-editor-style', get_template_directory_uri() . '/assets/css/editor.css', array(), wp_get_theme()->get( 'Version' ) );
+}
+add_action( 'enqueue_block_assets', 'busybiz_block_assets' );
