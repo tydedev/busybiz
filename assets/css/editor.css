@@ -3,3 +3,7 @@
   font-size: 0.8rem;
   border-radius: 3px;
 }
+
+.wp-block-navigation__responsive-container.is-menu-open.has-modal-open {
+  padding: 1.5rem;
+}

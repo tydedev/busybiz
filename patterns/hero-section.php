@@ -13,8 +13,8 @@
 
 <!-- wp:cover {"dimRatio":0,"isUserOverlayColor":true,"minHeight":430,"minHeightUnit":"px","contentPosition":"center center","isDark":false,"metadata":{"categories":["featured"],"patternName":"busybiz/hero-section","name":"Hero Section"},"style":{"border":{"bottom":{"color":"var:preset|color|primary","width":"20px"}},"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"},"margin":{"top":"0","bottom":"0"},"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-cover is-light" style="border-bottom-color:var(--wp--preset--color--primary);border-bottom-width:20px;margin-top:0;margin-bottom:0;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;min-height:430px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"right":"0","left":"0","top":"0","bottom":"0"},"margin":{"top":"0","bottom":"0"},"blockGap":"0"},"border":{"bottom":{"width":"0px","style":"none"},"top":[],"right":[],"left":[]}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide" style="border-bottom-style:none;border-bottom-width:0px;margin-top:0;margin-bottom:0;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><!-- wp:media-text {"align":"wide","mediaId":341,"mediaLink":"http://busybiz.local/?attachment_id=341","mediaType":"image","mediaWidth":43,"style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}}} -->
-<div class="wp-block-media-text alignwide is-stacked-on-mobile" style="padding-top:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);grid-template-columns:43% auto"><figure class="wp-block-media-text__media"><img src="http://busybiz.local/wp-content/uploads/2025/12/hero-1024x1024.jpg" alt="" class="wp-image-341 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-group alignwide" style="border-bottom-style:none;border-bottom-width:0px;margin-top:0;margin-bottom:0;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><!-- wp:media-text {"align":"wide","mediaId":341,"mediaLink":"none","mediaType":"image","mediaWidth":43,"verticalAlignment":"center","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}}} -->
+<div class="wp-block-media-text alignwide is-stacked-on-mobile is-vertically-aligned-center" style="padding-top:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);grid-template-columns:43% auto"><figure class="wp-block-media-text__media"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/hero.jpg" alt="Business Hero Section" class="wp-image-341 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:site-title {"level":5,"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary"} /-->
 
 <!-- wp:heading {"style":{"typography":{"lineHeight":"1.1"}}} -->
@@ -30,8 +30,8 @@
 <div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button">Learn More</a></div>
 <!-- /wp:button -->
 
-<!-- wp:button {"className":"hero-contact-button"} -->
-<div class="wp-block-button hero-contact-button"><a class="wp-block-button__link wp-element-button">Contact us</a></div>
+<!-- wp:button {"className":"is-style-contact"} -->
+<div class="wp-block-button is-style-contact"><a class="wp-block-button__link wp-element-button">Contact us</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div></div>

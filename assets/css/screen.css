@@ -1,11 +1,11 @@
 a {
-    transition: all 0.2s ease-in-out
+  transition: all 0.2s ease-in-out
 }
 
 header:has(>.is-position-sticky) {
-	position: sticky;
-	top: calc( 0px + var( --wp-admin--admin-bar--height, 0px ) );
-	z-index: 100;
+  position: sticky;
+  top: calc(0px + var(--wp-admin--admin-bar--height, 0px));
+  z-index: 100;
 }
 
 .wp-block-post-author-name:before {
@@ -16,25 +16,53 @@ header:has(>.is-position-sticky) {
 }
 
 .wp-block-post-date:before {
-   font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f133";
   padding-right: 8px;
 }
 
 .taxonomy-category:before {
-   font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f187";
   padding-right: 8px;
 }
 
 .taxonomy-post_tag:before {
-     font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f02b";
   padding-right: 8px;
 
+}
+
+.search-result-title:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f002";
+  padding-right: 8px;
+}
+
+.category-archive-title:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f187";
+  padding-right: 8px;
+}
+
+.date-archive-title:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f133";
+  padding-right: 8px;
+}
+
+.tag-archive-title:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f02b";
+  padding-right: 8px;
 }
 
 .wp-block-post-date__modified-date:before {
@@ -45,7 +73,7 @@ header:has(>.is-position-sticky) {
 }
 
 .hero-contact-button .wp-element-button:before {
-    font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f0e0";
   padding-right: 8px;
@@ -59,36 +87,40 @@ header:has(>.is-position-sticky) {
 }
 
 header.wp-element-button:before {
-    font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f0e0";
   padding-right: 3px;
 }
 
 .is-style-contact .wp-element-button:before {
-    font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f0e0";
   padding-right: 8px;
 }
 
 .is-style-contact-outline .wp-element-button:before {
-    font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f0e0";
   padding-right: 8px;
 }
 
 .is-style-call .wp-element-button:before {
-    font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f095";
   padding-right: 8px;
 }
 
 .is-style-call-outline .wp-element-button:before {
-    font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f095";
   padding-right: 8px;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open.has-modal-open {
+  padding: 1.5rem;
 }
