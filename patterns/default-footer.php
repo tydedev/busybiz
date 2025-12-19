@@ -1,3 +1,16 @@
+<?php
+
+/**
+ * Default footer
+ * Title: Footer
+ * Slug: busybiz/footer
+ * Categories: footer
+ * Block Types: core/template-part/footer
+ * Description: Footer with site title, links, and copyright. This is the default footer with dynamic current year, and site title.
+ */
+
+?>
+
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}},"border":{"top":{"color":"var:preset|color|gray","width":"1px"},"right":[],"bottom":[],"left":[]}},"layout":{"inherit":true,"type":"constrained"}} -->
 <div class="wp-block-group" style="border-top-color:var(--wp--preset--color--gray);border-top-width:1px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0"},"blockGap":"var:preset|spacing|40"}}} -->
 <div class="wp-block-group alignwide" style="padding-top:0;padding-bottom:0;padding-left:0"><!-- wp:columns -->
