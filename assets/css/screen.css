@@ -124,3 +124,40 @@ header.wp-element-button:before {
 .wp-block-navigation__responsive-container.is-menu-open.has-modal-open {
   padding: 1.5rem;
 }
+
+p.is-style-address:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f3c5";
+  padding-right: 8px;
+}
+
+
+p.is-style-phone:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f095";
+  padding-right: 8px;
+}
+
+
+p.is-style-email:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f0e0";
+  padding-right: 8px;
+}
+
+p.is-style-checkmark:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f058";
+  padding-right: 8px;
+}
+
+.is-style-checkmark:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f058";
+  padding-right: 8px;
+}

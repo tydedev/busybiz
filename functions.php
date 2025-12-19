@@ -119,6 +119,47 @@ register_block_style(
   ]
 );
 
+register_block_style(
+  'core/paragraph',
+  [
+    'name'  => 'address',
+    'label' => 'Address',
+  ]
+);
+register_block_style(
+  'core/paragraph',
+  [
+    'name'  => 'email',
+    'label' => 'Email',
+  ]
+);
+
+register_block_style(
+  'core/paragraph',
+  [
+    'name'  => 'phone',
+    'label' => 'Phone',
+  ]
+);
+
+register_block_style(
+  'core/paragraph',
+  [
+    'name'  => 'checkmark',
+    'label' => 'Checkmark',
+  ]
+);
+
+register_block_style(
+  'core/heading',
+  [
+    'name'  => 'checkmark',
+    'label' => 'Checkmark',
+  ]
+);
+
+
+
 
  function busybiz_block_assets(){
     // Enqueue theme stylesheet for the front-end.
@@ -130,3 +171,4 @@ register_block_style(
 	wp_enqueue_style( 'busybiz-editor-style', get_template_directory_uri() . '/assets/css/editor.css', array(), wp_get_theme()->get( 'Version' ) );
 }
 add_action( 'enqueue_block_assets', 'busybiz_block_assets' );
+

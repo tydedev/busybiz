@@ -116,6 +116,11 @@
 
   "styles": {
     "blocks": {
+      "core/heading": {
+        "variations": {
+          "checkmark": {}
+        }
+      },
       "core/post-excerpt": {
         "elements": {
           "link": {
@@ -280,6 +285,12 @@
         }
       },
       "core/paragraph": {
+        "variations": {
+          "address": {},
+          "email:": {},
+          "phone": {},
+          "checkmark": {}
+        },
         "spacing": {
           "margin": {
             "top": "0.5rem",

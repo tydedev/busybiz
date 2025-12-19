@@ -7,3 +7,12 @@
 .wp-block-navigation__responsive-container.is-menu-open.has-modal-open {
   padding: 1.5rem;
 }
+
+
+/* Mostra le icone FA solo nell'editor */
+.editor-styles-wrapper .has-fa-icon::before {
+    content: attr(data-fa-icon);
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    padding-right: 0.5rem;
+}
