@@ -30,19 +30,21 @@
 
     <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
     <div class="wp-block-group">
-      <!-- wp:navigation {"icon":"menu","style":{"spacing":{"margin":{"top":"0"},"blockGap":"var:preset|spacing|60"}},"fontSize":"small","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right","orientation":"horizontal"}} /-->
+      <!-- wp:navigation {"ref":5,"icon":"menu","metadata":{"ignoredHookedBlocks":["woocommerce/customer-account"]},"style":{"spacing":{"margin":{"top":"0"},"blockGap":"var:preset|spacing|60"}},"fontSize":"small","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right","orientation":"horizontal"}} /-->
+
+      <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+      <div class="wp-block-group">
+        <!-- wp:woocommerce/customer-account {"displayStyle":"icon_only","iconStyle":"line","iconClass":"wc-block-customer-account__account-icon"} /-->
+
+        <!-- wp:woocommerce/mini-cart /-->
+      </div>
+      <!-- /wp:group -->
 
       <!-- wp:buttons {"style":{"spacing":{"blockGap":{"left":"var:preset|spacing|20"}}}} -->
       <div class="wp-block-buttons">
         <!-- wp:button {"className":"is-style-contact"} -->
         <div class="wp-block-button is-style-contact">
           <a class="wp-block-button__link wp-element-button"> Contact us</a>
-        </div>
-        <!-- /wp:button -->
-
-        <!-- wp:button {"className":"is-style-call-outline"} -->
-        <div class="wp-block-button is-style-call-outline">
-          <a class="wp-block-button__link wp-element-button">Call us</a>
         </div>
         <!-- /wp:button -->
       </div>

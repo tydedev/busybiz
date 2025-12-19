@@ -41,7 +41,14 @@
       "wideSize": "1200px"
     },
     "spacing": {
-      "units": ["%", "px", "em", "rem", "vh", "vw"]
+      "units": [
+        "%",
+        "px",
+        "em",
+        "rem",
+        "vh",
+        "vw"
+      ]
     },
     "typography": {
       "defaultFontSizes": false,
@@ -113,7 +120,6 @@
     },
     "useRootPaddingAwareAlignments": true
   },
-
   "styles": {
     "blocks": {
       "core/heading": {
@@ -123,6 +129,12 @@
       },
       "core/post-excerpt": {
         "elements": {
+          "button": {
+            "color": {
+              "text": "var(--wp--preset--color--light)",
+              "background": "var(--wp--preset--color--primary)"
+            }
+          },
           "link": {
             "typography": {
               "fontSize": "var(--wp--preset--font-size--x-small)"
@@ -406,7 +418,9 @@
     {
       "name": "blog-with-sidebar",
       "title": "Blog with Sidebar",
-      "postTypes": ["page"]
+      "postTypes": [
+        "page"
+      ]
     }
   ],
   "version": 3

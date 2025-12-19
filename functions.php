@@ -158,6 +158,14 @@ register_block_style(
   ]
 );
 
+register_block_style(
+  'core/group',
+  [
+    'name'  => 'featured',
+    'label' => 'Featured',
+  ]
+);
+
 
 
 
