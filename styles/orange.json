@@ -1,18 +1,18 @@
 {
   "$schema": "https://schemas.wp.org/wp/6.9/theme.json",
   "version": 3,
-  "title": "Sky",
+  "title": "Orange",
   "settings": {
     "appearanceTools": true,
     "color": {
       "palette": [
         {
-          "color": "#0ea5e9",
+          "color": "#f97316",
           "name": "Primary",
           "slug": "primary"
         },
         {
-          "color": "#0c4a6e",
+          "color": "#9a3412",
           "name": "Secondary",
           "slug": "secondary"
         },
