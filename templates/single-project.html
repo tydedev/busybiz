@@ -1,0 +1,83 @@
+<!-- wp:template-part {"slug":"header","theme":"busybiz","tagName":"header"} /-->
+
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
+<div
+  class="wp-block-group"
+  style="
+    padding-top: var(--wp--preset--spacing--50);
+    padding-right: var(--wp--preset--spacing--50);
+    padding-bottom: var(--wp--preset--spacing--50);
+    padding-left: var(--wp--preset--spacing--50);
+  "
+>
+  <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
+  <div
+    class="wp-block-group alignwide"
+    style="
+      padding-top: var(--wp--preset--spacing--50);
+      padding-right: var(--wp--preset--spacing--50);
+      padding-bottom: var(--wp--preset--spacing--50);
+      padding-left: var(--wp--preset--spacing--50);
+    "
+  >
+    <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|40"}}}} -->
+    <div class="wp-block-columns alignwide">
+      <!-- wp:column {"width":"33%"} -->
+      <div class="wp-block-column" style="flex-basis: 33%">
+        <!-- wp:post-featured-image /-->
+      </div>
+      <!-- /wp:column -->
+
+      <!-- wp:column -->
+      <div class="wp-block-column">
+        <!-- wp:group {"layout":{"type":"flex","orientation":"vertical"}} -->
+        <div class="wp-block-group">
+          <!-- wp:post-title {"fontSize":"large"} /-->
+
+          <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+          <div class="wp-block-group">
+            <!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"}}} -->
+            <p style="font-style: normal; font-weight: 600">Client</p>
+            <!-- /wp:paragraph -->
+
+            <!-- wp:tydedev/project-client {"textTransform":"none"} /-->
+          </div>
+          <!-- /wp:group -->
+
+          <!-- wp:tydedev/project-website /-->
+        </div>
+        <!-- /wp:group -->
+      </div>
+      <!-- /wp:column -->
+    </div>
+    <!-- /wp:columns -->
+
+    <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}},"layout":{"type":"constrained","justifyContent":"left"}} -->
+    <div
+      class="wp-block-group alignwide"
+      style="
+        padding-top: var(--wp--preset--spacing--30);
+        padding-bottom: var(--wp--preset--spacing--30);
+      "
+    >
+      <!-- wp:post-terms {"term":"project-category"} /-->
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
+    <div
+      class="wp-block-group alignwide"
+      style="
+        padding-top: var(--wp--preset--spacing--50);
+        padding-bottom: var(--wp--preset--spacing--50);
+      "
+    >
+      <!-- wp:post-content {"align":"wide"} /-->
+    </div>
+    <!-- /wp:group -->
+  </div>
+  <!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","theme":"busybiz","tagName":"footer"} /-->

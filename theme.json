@@ -41,14 +41,7 @@
       "wideSize": "1200px"
     },
     "spacing": {
-      "units": [
-        "%",
-        "px",
-        "em",
-        "rem",
-        "vh",
-        "vw"
-      ]
+      "units": ["%", "px", "em", "rem", "vh", "vw"]
     },
     "typography": {
       "defaultFontSizes": false,
@@ -122,6 +115,38 @@
   },
   "styles": {
     "blocks": {
+      "tydedev/project-website": {
+        "variations": {
+          "button": {
+            "color": {
+              "text": "var(--wp--preset--color--light)",
+              "background": "var(--wp--preset--color--primary)"
+            }
+          },
+          "link": {
+            "typography": {
+              "fontSize": "var(--wp--preset--font-size--x-small)"
+            },
+            "css": ":hover{background:var(--wp--preset--color--secondary);text-decoration:none;}",
+            "color": {
+              "text": "var(--wp--preset--color--light)",
+              "background": "var(--wp--preset--color--dark)"
+            },
+            "border": {
+              "radius": "4px",
+              "color": "var(--wp--preset--color--gray)"
+            },
+            "spacing": {
+              "padding": {
+                "top": "0.3rem",
+                "bottom": "0.3rem",
+                "left": "0.5rem",
+                "right": "0.5rem"
+              }
+            }
+          }
+        }
+      },
       "core/heading": {
         "variations": {
           "checkmark": {}
@@ -418,9 +443,7 @@
     {
       "name": "blog-with-sidebar",
       "title": "Blog with Sidebar",
-      "postTypes": [
-        "page"
-      ]
+      "postTypes": ["page"]
     }
   ],
   "version": 3

@@ -22,7 +22,7 @@ header:has(>.is-position-sticky) {
   padding-right: 8px;
 }
 
-.taxonomy-category:before {
+.taxonomy-category:before, .taxonomy-project-category:before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f187";
@@ -237,3 +237,4 @@ p.is-style-checkmark:before {
   transform: translateY(-5px);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
+

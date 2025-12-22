@@ -7,176 +7,101 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Sicurezza base, sempre.
+	exit;
 }
 
-/**
- * Setup del tema
- */
-function busybiz_theme_setup() {
-	// Traduzioni
-	load_theme_textdomain( 'busybiz', get_template_directory() . '/languages' );
+$busybiz_includes = [
+	'inc/setup.php',
+	'inc/editor.php',
+	'inc/patterns.php',
+	'inc/cleanup.php',
+	'inc/body-classes.php',
+	'inc/block-styles.php',
+	'inc/assets.php',
+	'inc/utils.php',
+	'inc/cpts.php',
+];
 
-	// Supporti base per FSE
-	add_theme_support( 'block-templates' );
-	add_theme_support( 'editor-styles' );
-	add_theme_support( 'wp-block-styles' );
-	add_theme_support( 'responsive-embeds' );
-	add_theme_support( 'align-wide' );
-	add_theme_support( 'custom-spacing' );
-
-	// Thumbnail (anche se nei block theme spesso servono poco)
-	add_theme_support( 'post-thumbnails' );
-
-	// Rimuove il supporto ai pattern core se vuoi solo i tuoi
-	// remove_theme_support( 'core-block-patterns' );
-}
-add_action( 'after_setup_theme', 'busybiz_theme_setup' );
-
-
-/**
- * Editor styles (Gutenberg)
- */
-function busybiz_editor_assets() {
-	add_editor_style( 'assets/css/editor.css' );
-}
-add_action( 'after_setup_theme', 'busybiz_editor_assets' );
-
-/**
- * Registrazione pattern personalizzati
- */
-function busybiz_register_patterns() {
-	register_block_pattern_category(
-		'busybiz',
-		array( 'label' => __( 'BusyBiz', 'busybiz' ) )
-	);
-}
-add_action( 'init', 'busybiz_register_patterns' );
-
-/**
- * Disabilita roba inutile nel frontend
- */
-function busybiz_cleanup() {
-	remove_action( 'wp_head', 'rsd_link' );
-	remove_action( 'wp_head', 'wlwmanifest_link' );
-	remove_action( 'wp_head', 'wp_generator' );
-}
-add_action( 'init', 'busybiz_cleanup' );
-
-/**
- * Custom body classes
- */
-function busybiz_body_classes( $classes ) {
-	$classes[] = 'theme-busybiz';
-	return $classes;
-}
-add_filter( 'body_class', 'busybiz_body_classes' );
-
-/**
- * Utility: verifica se siamo nel Site Editor
- */
-function busybiz_is_site_editor() {
-	return is_admin() && function_exists( 'get_current_screen' ) && get_current_screen()?->is_block_editor();
+foreach ( $busybiz_includes as $file ) {
+	require_once get_template_directory() . '/' . $file;
 }
 
-register_block_style(
-  'core/button',
-  [
-    'name'  => 'secondary',
-    'label' => 'Secondary',
-  ]
-);
-
-register_block_style(
-  'core/button',
-  [
-    'name'  => 'contact',
-    'label' => 'Contact',
-  ]
-);
-
-register_block_style(
-  'core/button',
-  [
-    'name'  => 'contact-outline',
-    'label' => 'Contact Outline',
-  ]
-);
-
-register_block_style(
-  'core/button',
-  [
-    'name'  => 'call',
-    'label' => 'Call',
-  ]
-);
-
-register_block_style(
-  'core/button',
-  [
-    'name'  => 'call-outline',
-    'label' => 'Call Outline',
-  ]
-);
-
-register_block_style(
-  'core/paragraph',
-  [
-    'name'  => 'address',
-    'label' => 'Address',
-  ]
-);
-register_block_style(
-  'core/paragraph',
-  [
-    'name'  => 'email',
-    'label' => 'Email',
-  ]
-);
-
-register_block_style(
-  'core/paragraph',
-  [
-    'name'  => 'phone',
-    'label' => 'Phone',
-  ]
-);
-
-register_block_style(
-  'core/paragraph',
-  [
-    'name'  => 'checkmark',
-    'label' => 'Checkmark',
-  ]
-);
-
-register_block_style(
-  'core/heading',
-  [
-    'name'  => 'checkmark',
-    'label' => 'Checkmark',
-  ]
-);
-
-register_block_style(
-  'core/group',
-  [
-    'name'  => 'featured',
-    'label' => 'Featured',
-  ]
-);
-
-
-
-
- function busybiz_block_assets(){
-    // Enqueue theme stylesheet for the front-end.
-    wp_enqueue_style( 'busybiz-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
-    wp_enqueue_style( 'busybiz-frontend-style', get_template_directory_uri() . '/assets/css/screen.css', array(), wp_get_theme()->get( 'Version' ) );
-	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/font-awesome/css/all.css', array(), '5.15.3' );
-
-	// Enqueue theme stylesheet for the editor.
-	wp_enqueue_style( 'busybiz-editor-style', get_template_directory_uri() . '/assets/css/editor.css', array(), wp_get_theme()->get( 'Version' ) );
+$block_file = get_template_directory() . '/blocks/project-client/block.php';
+if ( file_exists($block_file) ) {
+    require $block_file;
 }
-add_action( 'enqueue_block_assets', 'busybiz_block_assets' );
 
+function tydedev_enqueue_project_client_block() {
+    wp_register_script(
+        'tydedev-project-client-block',
+        get_template_directory_uri() . '/blocks/project-client/block.js',
+        array( 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components' ),
+        filemtime( get_template_directory() . '/blocks/project-client/block.js' )
+    );
+
+   register_block_type( 'tydedev/project-client', array(
+    'editor_script'   => 'tydedev-project-client-block',
+    'render_callback' => 'tydedev_render_project_client_block',
+    'supports' => array(
+        'align' => array('wide','full'),
+        'spacing' => array(
+            'margin'  => true,
+            'padding' => true,
+        ),
+        'typography' => array(
+            'fontSize'       => true,  // Dimensione del font
+            'lineHeight'     => true,  // Altezza linea
+            'letterSpacing'  => true,  // Spaziatura lettere
+        ),
+        'color' => array(
+            'text'       => true,
+            'background' => true,
+        ),
+        'customClassName' => true,
+        'customSpacing'   => true,
+    ),
+) );
+
+}
+add_action( 'init', 'tydedev_enqueue_project_client_block' );
+
+
+
+$block_file = get_template_directory() . '/blocks/project-website/block.php';
+if ( file_exists($block_file) ) {
+    require $block_file;
+}
+
+function tydedev_enqueue_project_website_block() {
+    wp_register_script(
+        'tydedev-project-website-block',
+        get_template_directory_uri() . '/blocks/project-website/block.js',
+        array( 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components' ),
+        filemtime( get_template_directory() . '/blocks/project-website/block.js' )
+    );
+
+   register_block_type( 'tydedev/project-website', array(
+    'editor_script'   => 'tydedev-project-website-block',
+    'render_callback' => 'tydedev_render_project_website_block',
+    'supports' => array(
+        'align' => array('wide','full'),
+        'spacing' => array(
+            'margin'  => true,
+            'padding' => true,
+        ),
+        'typography' => array(
+            'fontSize'       => true,  // Dimensione del font
+            'lineHeight'     => true,  // Altezza linea
+            'letterSpacing'  => true,  // Spaziatura lettere
+        ),
+        'color' => array(
+            'text'       => true,
+            'background' => true,
+        ),
+        'customClassName' => true,
+        'customSpacing'   => true,
+    ),
+) );
+
+}
+add_action( 'init', 'tydedev_enqueue_project_website_block' );
